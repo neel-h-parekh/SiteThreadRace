@@ -52,8 +52,6 @@ class MultiLink extends Thread
 			System.out.println("Thread " +  threadName + threadurl + " interrupted.");
 			e.printStackTrace();
 		}
-		
-		System.out.println("Thread " +  threadName + threadurl + " exiting.");
 		System.out.println("Thread " +  threadName + threadurl + " exiting.");
 	}
 	
@@ -72,10 +70,16 @@ public class TestThreadRace
 {
 	public static void main(String args[]) 
 	{
-		MultiLink T1 = new MultiLink("Thread-1","http://dev1-sterlingbackcheck-canada/");
+		MultiLink T1 = new MultiLink("Thread-1","http://dev1-sterlingbackcheck-us/");
 		T1.start();
 		
 		MultiLink T2 = new MultiLink("Thread-2","http://dev1-sterlingbackcheck-uk/");
 		T2.start();
+		
+		MultiLink T3 = new MultiLink("Thread-3","http://dev1-sterlingbackcheck-ca/");
+		T3.start();
+		
+		MultiLink T4 = new MultiLink("Thread-4","http://dev1-sterlingbackcheck-ca/ca-fr");
+		T4.start();
 	}
 }
