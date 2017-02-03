@@ -42,26 +42,10 @@ class MultiLink extends Thread
 			System.setProperty("webdriver.chrome.driver","C:\\Sts\\SiteCore\\STCorp_au\\Sitemap\\chromedriver_new.exe");
 			System.setProperty("webdriver.gecko.driver","C:\\eclipse\\geckodriver-v0.14.0-win64\\geckodriver.exe");
 			fdriver = new FirefoxDriver();
-//			System.setProperty("webdriver.chrome.driver",ChromeDriver);
 			driver = new ChromeDriver();
 			Thread.sleep(100);
 			driver.get(threadurl);
-//			fdriver.get(threadurl);
-			
-			
-//	        DesiredCapabilities capabilities = DesiredCapabilities.chrome();
-	        LoggingPreferences loggingprefs = new LoggingPreferences();
-	        loggingprefs.enable(LogType.BROWSER, Level.ALL);
-//	        capabilities.setCapability(CapabilityType.LOGGING_PREFS, loggingprefs);
-//	        driver = new ChromeDriver(capabilities);
-//	        driver.get("threadurl");
-	        LogEntries logEntries = driver.manage().logs().get(LogType.BROWSER);
-	        for (LogEntry entry : logEntries) 
-	        {
-	            System.out.println(new Date(entry.getTimestamp()) + " " + entry.getLevel() + " " + entry.getMessage());
-	        }
-	        
-	        
+			fdriver.get(threadurl);
 		}
 		catch (Exception e) 
 		{
@@ -92,6 +76,6 @@ public class TestThreadRace
 		T1.start();
 		
 		MultiLink T2 = new MultiLink("Thread-2","http://dev1-sterlingbackcheck-uk/");
-//		T2.start();
+		T2.start();
 	}
 }
