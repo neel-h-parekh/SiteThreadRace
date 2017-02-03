@@ -70,6 +70,7 @@ class MultiLink extends Thread
 		}
 		
 		System.out.println("Thread " +  threadName + threadurl + " exiting.");
+		System.out.println("Thread " +  threadName + threadurl + " exiting.");
 	}
 	
 	public void start () 
