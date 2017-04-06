@@ -39,7 +39,8 @@ class MultiLink extends Thread
 		
 		try 
 		{
-			System.setProperty("webdriver.chrome.driver","C:\\Sts\\SiteCore\\STCorp_au\\Sitemap\\chromedriver_new.exe");
+			System.setProperty("webdriver.chrome.driver","C:\\Sts\\SiteCore\\STCorp_au\\Sitemap\\STCorpWebUrl_vFirst\\chromedriver_new.exe");
+			
 			System.setProperty("webdriver.gecko.driver","C:\\eclipse\\geckodriver-v0.14.0-win64\\geckodriver.exe");
 			fdriver = new FirefoxDriver();
 			driver = new ChromeDriver();
@@ -70,16 +71,16 @@ public class TestThreadRace
 {
 	public static void main(String args[]) 
 	{
-		MultiLink T1 = new MultiLink("Thread-1","http://dev1-sterlingbackcheck-us/");
+		MultiLink T1 = new MultiLink("Thread-1","http://www.sterlingtalentsolutions.com/");
 		T1.start();
 		
-		MultiLink T2 = new MultiLink("Thread-2","http://dev1-sterlingbackcheck-uk/");
+		MultiLink T2 = new MultiLink("Thread-2","http://www.sterlingtalentsolutions.co.uk/");
 		T2.start();
 		
-		MultiLink T3 = new MultiLink("Thread-3","http://dev1-sterlingbackcheck-ca/");
+		MultiLink T3 = new MultiLink("Thread-3","http://www.sterlingtalentsolutions.ca/");
 		T3.start();
 		
-		MultiLink T4 = new MultiLink("Thread-4","http://dev1-sterlingbackcheck-ca/ca-fr");
+		MultiLink T4 = new MultiLink("Thread-4","http://www.sterlingtalentsolutions.ca/ca-fr");
 		T4.start();
 	}
 }
